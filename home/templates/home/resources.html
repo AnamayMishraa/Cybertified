@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block start %}
+
+<nav>
+    <label class="logo"><a href="/">Cybertified</a></label>
+
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/writeups">Writeups</a></li>
+        </ul>
+</nav>
+    
+    <section class="intro-section">
+            
+            
+                <img src="/static/images/res-image.png" alt="Resources" class="intro-image">
+          
+            
+            <span class="res-intro">
+                <h1 class="res-h1">Explore Resources</h1><br>
+                <p>
+                    Dive into a wide range of resources designed to strengthen your cybersecurity knowledge.<br> Whether you're a beginner or a seasoned professional, you'll find something here to enhance your skills.
+                </p>
+               
+                <form class="res-intro-form">
+                    <input type="search" placeholder="Eg pentesting guide" aria-label="Search">
+                    <button type="submit">Search</button>
+                </form>
+            </span>
+        
+    </section>
+    
+    <div class="section-title-res">
+        <h3>Tools</h3>
+    </div>
+    <div class="card-carousel">
+        {% for post in tools_posts %}
+        <div class="resources-card">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <h4>{{ post.title }}</h4>
+            <span class="category">CTF</span>
+            <p>{{ post.short_description }}</p>
+            <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+
+    
+
+    <div class="section-title-res">
+            <h3>Guides & Tutorials</h3>
+        </div>
+        <div class="card-carousel">
+            {% for post in guides_posts %}
+            <div class="resources-card">
+                <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+                <h4>{{ post.title }}</h4>
+                <span class="category">Guides</span>
+                <p>{{ post.short_description }}</p>
+                <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
+                </div>
+                {% endfor %}
+            </div>
+
+    
+
+
+{% endblock %}

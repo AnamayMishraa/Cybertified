@@ -1,0 +1,115 @@
+{% extends "base.html "%}
+{% block start %}
+    <div id="loading-screen">
+        <pre id="loading-text">
+            ( visitor@cybertified )-[~/Home]
+            $ python3 cybertified.py
+
+            ▄████▓██   ██▓▄▄▄▄  ▓█████ ██▀███ ▄▄▄█████▓██▓ ███████▓█████▓█████▄ 
+            ▒██▀ ▀█▒██  ██▓█████▄▓█   ▀▓██ ▒ ██▓  ██▒ ▓▓██▓██   ▓██▓█   ▀▒██▀ ██▌
+            ▒▓█    ▄▒██ ██▒██▒ ▄█▒███  ▓██ ░▄█ ▒ ▓██░ ▒▒██▒████ ▒██▒███  ░██   █▌
+            ▒▓▓▄ ▄██░ ▐██▓▒██░█▀ ▒▓█  ▄▒██▀▀█▄ ░ ▓██▓ ░░██░▓█▒  ░██▒▓█  ▄░▓█▄   ▌
+            ▒ ▓███▀ ░ ██▒▓░▓█  ▀█░▒████░██▓ ▒██▒ ▒██▒ ░░██░▒█░  ░██░▒████░▒████▓ 
+            ░ ░▒ ▒  ░██▒▒▒░▒▓███▀░░ ▒░ ░ ▒▓ ░▒▓░ ▒ ░░  ░▓  ▒ ░  ░▓ ░░ ▒░ ░▒▒▓  ▒ 
+              ░  ▒ ▓██ ░▒░▒░▒   ░ ░ ░  ░ ░▒ ░ ▒░   ░    ▒ ░░     ▒ ░░ ░  ░░ ▒  ▒ 
+            ░      ▒ ▒ ░░  ░    ░   ░    ░░   ░  ░      ▒ ░░ ░   ▒ ░  ░   ░ ░  ░ 
+            ░ ░    ░ ░     ░        ░  ░  ░             ░        ░    ░  ░  ░    
+            ░      ░ ░          ░                                         ░      
+    
+        </pre>
+    </div>
+    
+    <div class="wrapper">
+        <div class="container">
+            
+            <nav>
+                <label class="logo"><a href="/">Cybertified</a></label>
+                
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/resources">Resources</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/writeups">Writeups</a></li>
+                    </ul>
+                </nav>
+            
+    <section id="home" class="hero-section">
+        <div class="intro-text">
+            <h1 class="h1"> 
+                <span class="red" data-value="Attack">Attack</span>, 
+                <span class="blue" data-value="Defend">Defend</span>, 
+                <span class="purple" data-value="Innovate">Innovate</span>
+            </h1>
+            <p class="changing-text">Where Security Meets Innovation...</p><br>
+            <strong>Get Cybertified!!</strong>
+        </div>
+        <div class="information">
+            <h2>About Us</h2>
+                <p>
+                    Welcome to Cybertified, a new and dynamic community dedicated to building a platform where cybersecurity enthusiasts can learn, grow, and connect. Our ultimate aim is to provide a space where anyone—from beginners to seasoned professionals—can access foundational knowledge of cybersecurity for free.
+                    <br><br>
+                    At Cybertified, we believe in empowering enthusiasts by offering free resources, hands-on projects, and in-depth CTF (Capture The Flag) writeups. Whether you're just starting your journey into cybersecurity or looking to sharpen your skills, our community is here to support you every step of the way.
+                    <br><br>
+                    Explore the latest tools, learn from curated writeups, and work on real-world projects that push the boundaries of what's possible in the field of cybersecurity. Join us as we create an inclusive and collaborative space for learning, sharing, and growing together. Let's make cybersecurity education accessible to everyone!
+                </p>
+
+        </div>
+    </section>
+</div> 
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Check if the current page is index.html or the root URL
+    if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
+        console.log('Loading screen activated for index.html or root URL');
+
+        const loadingText = document.getElementById('loading-text'); // Ensure this element exists
+        const mainContent = document.querySelector('.wrapper');
+
+        // Array of simulated commands
+        const commands = [
+            'installing scripts... [OK]',   
+            'setting up environment... [OK]',
+            'loading modules... [OK]',
+            'starting services... [OK]',
+            'checking system integrity... [OK]',
+            'mounting filesystems... [OK]',
+            'boot complete.',
+        ];
+
+        let index = 0;
+
+        function showNextCommand() {
+    if (index < commands.length) {
+        loadingText.textContent += commands[index] + '\t\n'; // Append command with a tab space
+        index++;
+        setTimeout(showNextCommand, 1000); // Show next command after 1 second
+    } else {
+        setTimeout(() => {
+            loadingText.textContent += 'Welcome to Cybertified!\n'; // Final message
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+                mainContent.style.display = 'block'; // Show main content
+            }, 1000); // Delay before showing main content
+        }, 1000); // Delay after last command
+    }
+}
+
+
+        showNextCommand(); // Start showing commands
+    } else {
+        // If not on index.html or root URL, display the main content immediately
+        console.log('Not the index page, showing content directly');
+        document.querySelector('.wrapper').style.display = 'block'; // Show main content
+        document.getElementById('loading-screen').style.display = 'none'; // Hide loading screen
+    }
+});
+
+
+
+</script>
+
+    
+
+{% endblock %}

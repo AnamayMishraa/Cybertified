@@ -1,0 +1,96 @@
+{% extends "base.html "%}
+{% block start %}
+
+<nav>
+    <label class="logo"><a href="/">Cybertified</a></label>
+    
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/writeups">Writeups</a></li>
+        </ul>
+    </nav>
+   
+    
+
+    <div class="intro-section-writeups">
+        <div class="intro-content-writeups">
+            <h1><span class="intro-writeup" data-value="CTF">CTF</span> & <span class="intro-writeup" data-value="Lab">Lab</span><span class="intro-writeup" data-value=" Writeups"> Writeups</span></h1>
+            <p>
+                Welcome to the Writeups section! Explore comprehensive guides on CTF challenges, TryHackMe labs, HackerOne reports, VulnHub machines, and more. Whether you're sharpening your skills or looking for solutions, these detailed walkthroughs will help you understand vulnerabilities, exploits, and defensive strategies.
+            </p>
+            <a href="#writeups-categories" class="cta-button">Explore Writeups</a>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="section-title">
+        <h3>Capture the Flag <i class="fa-solid fa-flag" style="color: #ff0000;"></i></h3>
+    </div>
+    <div class="card-carousel">
+        {% for post in ctf_posts %}
+        <div class="writeup-card">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <h4>{{ post.title }}</h4>
+            <span class="category">Tools</span>
+            <p>{{ post.short_description }}</p>
+            <a href="{% url 'resources_detail' post.slug %}">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+        
+    <!-- TryHackMe Section -->
+    <div class="section-title">
+        <h3>TryHackMe Labs</h3>
+    </div>
+    <div class="card-carousel">
+        {% for post in thm_posts %}
+        <div class="writeup-card">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <h4>{{ post.title }}</h4>
+            <span class="category">THM</span>
+            <p>{{ post.short_description }}</p>
+            <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
+        </div>
+        {% endfor %}
+        
+    </div>
+
+    <!-- HackerOne Section -->
+    <div class="section-title">
+        <h3>HackerOne Reports</h3>
+    </div>
+    <div class="card-carousel">
+        {% for post in hackerone_posts %}
+        <div class="writeup-card">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <h4>{{ post.title }}</h4>
+            <span class="category">HackerOne</span>
+            <p>{{ post.short_description }}</p>
+            <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- VulnHub Machines Section -->
+    <div class="section-title">
+        <h3>VulnHub Machines</h3>
+    </div>
+    <div class="card-carousel">
+        {% for post in vulnhub_posts %}
+        <div class="writeup-card">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <h4>{{ post.title }}</h4>
+            <span class="category">VulnHub</span>
+            <p>{{ post.short_description }}</p>
+            <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
+        </div>
+        {% endfor %}
+    
+    </div>
+
+{% endblock %}

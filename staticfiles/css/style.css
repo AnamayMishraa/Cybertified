@@ -1,0 +1,489 @@
+/* General Styles */
+
+
+
+#loading-screen {
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed; /* Fix loading screen in place */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure it's on top */
+}
+
+.loading-content {
+    text-align: left; /* Align text to left */
+}
+
+pre {
+    font-size: 18px;
+    white-space: pre; /* Preserve whitespace and new lines */
+
+}
+
+.wrapper {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212;
+}
+
+body {
+    font-family: 'VT323', monospace; /* Ensure VT323 is loaded */
+    background-color: #121212;
+    color: #ffffff;     
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #171717; /* Dark background for nav */
+    padding: 10px 20px; /* Padding around the nav items */
+    height: 60px;
+    width: 100%;
+}
+
+label.logo {
+    font-size: 25px;
+    line-height: 40px;
+    padding-left: 60px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: bold;
+}
+.logo a {
+    text-decoration: none;
+    color: #00ff00;
+}
+
+nav ul {
+    float: right;
+    margin-right: 30px ;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 35px;
+    margin: 0 15px;
+    
+}
+
+nav ul li a {
+    color: #00ff00; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 25px; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+nav ul li a:hover {
+    color: #00ffff; /* Change color on hover */
+}
+
+
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.container {
+    height: auto;  /* Let the container expand based on its content */
+}
+.intro-text {
+    text-align: center;
+    color: #00ff00;
+}
+
+.intro-text .h1 {
+    font-size: 40px; /* Keep this as per your original design */
+    border-right: 3px solid #00ff00;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-size: 50px;
+}
+
+.intro-text p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.intro-text strong {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.red {
+    color: #ff0000; /* Red color for 'Attack' */
+}
+
+.blue {
+    color: #0000ff; /* Blue color for 'Defend' */
+}
+
+.purple {
+    color: #800080; /* Purple color for 'Innovate' */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ff00; }
+}
+
+.changing-text {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #00ffff;
+    animation: letter-change 2s infinite;
+}
+
+@keyframes letter-change {
+    0% { content: 'Empowering the Next Generation of Cyber Warriors'; }
+    25% { content: 'Hack, Secure, Innovate – Together'; }
+    50% { content: 'Building a Safer Digital Future'; }
+    75% { content: 'Master the Art of Cyber Protection'; }
+    100% { content: 'Empowering the Next Generation of Cyber Warriors'; }
+}
+
+
+/* Information Section */
+div.information {
+    background-color: #121212;
+    border-radius: 30px;
+    margin-top: 134px;
+    width: 90%;
+    text-align: center;
+}
+
+div.information h2 {
+    color: #00ff00;
+    font-size: 36px;
+}
+
+.information p {
+    color: #cccccc;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #121212;
+    text-align: center;
+    padding: 20px 0;
+    color: #ffffff; /* Ensure footer text color is visible */
+}
+
+.intro-section {
+    border-radius: 2px;
+    margin-bottom: 100px;
+}
+
+.intro-image {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+    height: 30rem;
+    width: 30%;
+    margin-left: 20px;
+    margin: 30px 130px;
+}
+
+section span.res-intro {
+    float: right;
+    margin-right: 50px;
+}
+
+span.res-intro {
+    line-height: 25px;
+    display:inline-block;
+    margin-top: 150px;
+}
+
+.res-h1 {
+    font-weight: 700;
+    color: #333;
+    font-size: 35px;
+    color: #00ffff;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+.res-intro-form input[type="search"] {
+    border: 3px solid #00ffff;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: white;
+    margin-right: 10px; /* Space between input and button */
+    box-shadow: #00ffff 0px 2px 4px 0px, #00ffff 0px 2px 16px 0px;
+}
+
+.res-intro-form button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-color: #00ffff;
+    border-radius: 0.25rem;
+    background-color: #ffffff; /* Button background color */
+    color: rgb(0, 0, 0); /* Button text color */
+    border: none; /* Remove border */
+    box-shadow: #00ffff 0px 2px 4px 0px, #00ffff 0px 2px 16px 5px;
+}
+
+
+
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column; /* Stack image and text on small screens */
+        align-items: center; /* Center align items */
+    }
+    .res-intro {
+        margin-left: 0; /* Remove left margin for smaller screens */
+    }
+}
+
+.section-title-res h3 {
+    color: #00ffff;
+    margin-bottom: 20px;
+    margin-left: 18px;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+
+.resources-card {
+    border-radius: 8px;
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0px 0px 4px 0px #00ffff, 0px 0px 16px 0px #00ffff;
+
+}
+
+.resources-card:hover {
+    transform: translateY(-5px);
+}
+
+.resources-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.resources-card h4 {
+    color: #00ffff;
+    margin: 7px 9px 2px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.resources-card .category {
+    display: inline-block;
+    background-color: #00ffff;
+    color: #000;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 13px 10px 2px;
+}
+
+.resources-card p {
+    padding: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: -12px;
+    font-weight: bolder;
+}
+
+.resources-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #00ffff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 21px 7px 15px;
+    border-radius: 6px;
+}
+
+.resources-card a:hover {
+    background-color: #19a7b1;
+}
+
+
+
+
+/* -writeups */
+
+.intro-section-writeups {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text color */
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    position: relative;
+}
+
+.intro-content-writeups {
+    width: 60%;
+}
+
+.intro-section-writeups h1 {
+    font-size: 60px;
+    color: #f39c12; /* Highlight title */
+    margin-bottom: 20px;
+}
+
+.intro-section-writeups p {
+    font-size: 24px;
+    line-height: 1.1;
+    color: #cccccc; /* Light gray for paragraph text */
+    margin-bottom: 40px;
+    margin: 30px -12px;
+}
+
+.cta-button {
+    background-color: #f39c12;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+.cta-button:hover {
+    background-color: #d87f0f;
+}
+
+
+
+.section-title h3 {
+    color: #f39c12;
+    margin-bottom: 20px;
+    margin-left: 18px;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.card-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-left: 6px;
+    margin-top: 2px;
+}
+
+.writeup-card {
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0px 0px 4px 0px #f39c12, 0px 0px 16px 0px #f39c12;
+
+}
+
+.writeup-card:hover {
+    transform: translateY(-5px);
+}
+
+.writeup-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.writeup-card h4 {
+    color: #f39c12;
+    margin: 7px 9px 2px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.writeup-card .category {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #000;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 10px 10px 0;
+}
+
+.writeup-card p {
+    padding: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.writeup-card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #f39c12;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px 15px;
+    border-radius: 4px;
+}
+
+.writeup-card a:hover {
+    background-color: #d87f0f;
+}
+
+/* For making the card carousel horizontal and scrollable */
+.card-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.card-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.card-carousel > .writeup-card {
+    scroll-snap-align: center;
+}
+
+
+/* Project.html */
+.intro-section-projects {
+    font-size: 50px;
+    color: rgb(187, 0, 255);
+    text-align: center;
+    margin: 200px 0px 184px 0px;
+}
+.intro-section-projects p {
+    font-size: 20px;
+    color: white;
+}
