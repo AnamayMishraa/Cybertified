@@ -487,3 +487,32 @@ span.res-intro {
     font-size: 20px;
     color: white;
 }
+
+.author-signature {
+    margin-top: 50px;
+    text-align: right;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.author-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.date, .time, .location {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.date::before, .time::before, .location::before {
+    content: '— ';
+}
+
+.location {
+    margin-top: 10px;
+    color: #555;
+}

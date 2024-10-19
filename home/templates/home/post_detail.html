@@ -1,4 +1,4 @@
-{% extends "base.html "%}
+{% extends "base.html" %}
 {% block start %}
 
 <nav>
@@ -11,6 +11,19 @@
             <li><a href="/writeups">Writeups</a></li>
         </ul>
 </nav>
+
+
+<div class="post-content" style="font-size:xx-large">
+        {{ post.description|safe }}  <!-- The |safe filter is used to render HTML content -->
+    </div>
+
+<br>
+<div class="author-signature">
+    <p>Writeup By: <span class="author-name">Anamay Mishra</span></p>
+    <p>Date: <span class="date">{{ post.created_at|date:"F j, Y" }}</span></p>
+    <p>Time: <span class="time">{{ post.created_at|date:"g:i A" }}</span></p>
+    <p>Location: <span class="location">India</span></p>
+</div>
 
 
 

@@ -18,8 +18,16 @@ SECRET_KEY = 'django-insecure-d=-xy6nkh=+%ydb8l4*%u)a_v-cvcx2k$8#lo68hb2%$ta5ffr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['cybertified.in', 'www.cybertified.in']
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_HSTS_SECONDS = 31536000  # One year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS
 
 # Application definition
 
@@ -32,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.shortcuts',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 EXTERNAL_APPS= [
@@ -120,6 +129,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+# CKEditor Configurations
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+        'extraPlugins': 'image2',
+    },
+}
+
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

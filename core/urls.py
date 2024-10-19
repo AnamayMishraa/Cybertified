@@ -19,6 +19,7 @@ from django.urls import path
 from home.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
 
 urlpatterns = [
     path('', home, name="home"),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('writeups/', writeups, name='writeups'),
     path('writeup/<slug:slug>/', post_detail, name="writeup_detail"),
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
