@@ -485,7 +485,8 @@ span.res-intro {
 }
 
 .post-content {
-    margin: 20px auto;  /* Adds margin at the top and bottom, and auto for centering horizontally */
+    margin: 20px auto;
+    margin-left: 60px;  /* Adds margin at the top and bottom, and auto for centering horizontally */
     padding: 20px;      /* Adds padding inside the div */
     max-width: 900px;   /* Optional: limits the width of the content */
     overflow-x: hidden;
@@ -494,23 +495,24 @@ span.res-intro {
 
 
 .author-signature {
-    margin-top: 50px;
+    margin-bottom: 30px;
     text-align: center;
     font-style: italic;
     font-family: 'VT323', serif;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    border-top: 3px solid #ddd;
+    padding-top: 11px;
+    font-size: 25px
 }
 
 .author-name {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 25px;
 }
 
 .date, .time, .location {
-    display: block;
+    display: inline;
     margin-top: 5px;
-    font-size: 1rem;
+    font-size: 25px;
 }
 
 .date::before, .time::before, .location::before {
@@ -519,5 +521,5 @@ span.res-intro {
 
 .location {
     margin-top: 10px;
-    color: #555;
+    font-weight: bold;
 }

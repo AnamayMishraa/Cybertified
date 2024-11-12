@@ -34,11 +34,9 @@ def writeups(request):
         "vulnhub_posts": vulnhub_posts
     })
 
-def post_detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    return render(request, "home/post_detail.html", {
-        "page_title": post.slug,
-        "post": post,
-    })
+def post_detail(request, slug): post = get_object_or_404(Post, 
+    slug=slug) return render(request, "home/post_detail.html", {"post": 
+    post,})
+
 #def success_page(request):
  #   return HttpResponse("Hey this is success page")
