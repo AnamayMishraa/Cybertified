@@ -484,11 +484,20 @@ span.res-intro {
     color: white;
 }
 
+.post-content {
+    margin: 20px auto;  /* Adds margin at the top and bottom, and auto for centering horizontally */
+    padding: 20px;      /* Adds padding inside the div */
+    max-width: 900px;   /* Optional: limits the width of the content */
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+
 .author-signature {
     margin-top: 50px;
-    text-align: right;
+    text-align: center;
     font-style: italic;
-    font-family: 'Georgia', serif;
+    font-family: 'VT323', serif;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
