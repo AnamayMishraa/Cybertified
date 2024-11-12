@@ -41,15 +41,21 @@ body {
     color: #ffffff;     
 }
 
+
+
 /* Navigation Styles */
 nav {
-    background-color: #171717; /* Dark background for nav */
+    background-color: #121212; /* Dark background for nav */
     padding: 10px 20px; /* Padding around the nav items */
-    height: 60px;
+    height: 84px;
     width: 100%;
 }
 
-
+nav a img {
+    height: auto;
+    width: 240px;
+    margin-left: 30px;
+}
 
 nav ul {
     float: right;
@@ -64,7 +70,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #00ff00; /* Link color */
+    color: #ffffff; /* Link color */
     text-decoration: none; /* Remove underline from links */
     font-size: 25px; /* Font size for links */
     transition: color 0.3s ease; /* Smooth color transition on hover */
@@ -330,7 +336,7 @@ span.res-intro {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full screen height */
+    height: 84vh; /* Full screen height */
     position: relative;
 }
 
