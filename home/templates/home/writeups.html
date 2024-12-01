@@ -41,7 +41,7 @@
             <h4>{{ post.title }}</h4>
             <span class="category">CTF</span>
             <p>{{ post.short_description }}</p>
-            <a href="{% url 'resources_detail' post.slug %}">Read More</a>
+            <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
             </div>
             {% endfor %}
         </div>
@@ -89,7 +89,7 @@
             <img src="{{ post.image.url }}" alt="{{ post.title }} Image">
             <h4>{{ post.title }}</h4>
             <span class="category">VulnHub</span>
-            <p>{{ post.short_description }}</p>
+            <p>{{ post.short_descrisption }}</p>
             <a href="{% url 'writeup_detail' post.slug %}">Read More</a>
         </div>
         {% endfor %}

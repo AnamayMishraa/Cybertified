@@ -36,6 +36,15 @@ def writeups(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
+
+    if post.categories.filter(name__iexact="writeup").exists():
+        template_name = "home/writeup_detail.html"
+    elif post.categories.filter(name__iexact="resources").exists():
+        template_name = "home/resources_detail.html"
+    else:
+        # Optional: Handle case where the post doesn't belong to a known category
+        template_name = "home/unknown_detail.html"
+        
     return render(request, "home/post_detail.html", {
         "page_title": post.slug,
         "post": post,

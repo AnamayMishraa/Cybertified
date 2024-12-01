@@ -13,18 +13,19 @@
         </ul>
 </nav>
 
+<div class="author-signature">
+    <p><span class="date">{{ post.created_at|date:"F j, Y" }}</span></p>
+    <p id="post-title">{{post.title}}</p><br>
+    <p id="short-des">{{post.short_description}}</p><br>
+    <p class="signature-foot">Author: <span class="author-name">Anamay Mishra</span></p>
+    <a href="https://www.linkedin.com/in/anamay-mishra" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin icon-spacing fa-fade"></i></a>&nbsp<a href="https://www.github.com/AnamayMishraa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-github icon-spacing fa-fade"></i></a>
+</div>
 
 <div class="post-content" style="font-size:x-large">
         {{ post.description|safe }}  <!-- The |safe filter is used to render HTML content -->
     </div>
 
 <br>
-<div class="author-signature">
-    <p>Writeup By: <span class="author-name">Anamay Mishra</span></p>
-    <p>Date: <span class="date">{{ post.created_at|date:"F j, Y" }}</span></p>
-    <p>Time: <span class="time">{{ post.created_at|date:"g:i A" }}</span></p>
-    <p>Location: <span class="location">India</span></p>
-</div>
 
 
 

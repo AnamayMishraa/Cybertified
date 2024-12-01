@@ -495,31 +495,42 @@ span.res-intro {
 
 
 .author-signature {
-    margin-bottom: 30px;
-    text-align: center;
+    margin: 109px 32rem 40px 6rem;
     font-style: italic;
+    padding-right: 10rem;
     font-family: 'VT323', serif;
-    border-top: 3px solid #ddd;
     padding-top: 11px;
     font-size: 25px
 }
-
-.author-name {
+.author-signature #post-title{
+    font-size: 50px;
+    margin-right: 24rem;
     font-weight: bold;
-    font-size: 25px;
 }
 
-.date, .time, .location {
-    display: inline;
+.author-signature #short-des{
+    font-size: 20px;
+    margin-left: 3px
+}
+
+.signature-foot,.author-name{
+    font-size: 20px;
+    
+}
+.icon-spacing {
+    margin-top: 5px; /* Adjust spacing as needed */
+}
+.author-signature a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps the icon's default color */
+}
+
+
+.date{
     margin-top: 5px;
-    font-size: 25px;
+    margin-left: 7px;
+    margin-right: 38rem;
+    font-size: 17px;
 }
 
-.date::before, .time::before, .location::before {
-    content: '— ';
-}
 
-.location {
-    margin-top: 10px;
-    font-weight: bold;
-}
